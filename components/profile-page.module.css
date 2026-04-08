@@ -17,13 +17,18 @@
 
 .blurTop {
   position: absolute;
-  top: 80px;
+  top: 60px;
   left: 50%;
   transform: translateX(-50%);
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(139, 0, 0, 0.6) 0%, rgba(139, 0, 0, 0.3) 40%, transparent 70%);
-  filter: blur(60px);
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(
+    circle, 
+    rgba(53, 255, 208, 0.15) 0%, 
+    rgba(64, 147, 255, 0.1) 30%,
+    transparent 60%
+  );
+  filter: blur(80px);
   border-radius: 50%;
 }
 
@@ -118,13 +123,40 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background: rgba(101, 114, 148, 0.08);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(17, 21, 26, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   padding: 20px;
   gap: 16px;
   border-radius: 18px;
   overflow: hidden;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Gradient border effect */
+.glassCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg, 
+    rgba(53, 255, 208, 0.4) 0%, 
+    rgba(53, 255, 208, 0) 30%,
+    rgba(64, 147, 255, 0) 70%,
+    rgba(64, 147, 255, 0.3) 100%
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 /* Diagonal light reflection for liquid glass effect */
@@ -137,25 +169,26 @@
   background: linear-gradient(
     -45deg,
     transparent 0%,
-    transparent 40%,
-    rgba(255, 255, 255, 0.03) 40%,
-    rgba(255, 255, 255, 0.08) 50%,
-    rgba(255, 255, 255, 0.03) 60%,
-    transparent 60%,
+    transparent 42%,
+    rgba(255, 255, 255, 0.02) 42%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(255, 255, 255, 0.02) 58%,
+    transparent 58%,
     transparent 100%
   );
   pointer-events: none;
   z-index: 0;
 }
 
-.glassCard::before {
+/* Top highlight */
+.glassCard::after {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 20px;
+  right: 20px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   pointer-events: none;
 }
 
@@ -176,17 +209,43 @@
 .connectBtn {
   padding: 10px 20px;
   border-radius: 12px;
-  background: rgba(101, 114, 148, 0.15);
+  background: rgba(17, 21, 26, 0.6);
   border: none;
   color: #fff;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: background 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.connectBtn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg, 
+    rgba(53, 255, 208, 0.4) 0%, 
+    rgba(53, 255, 208, 0) 50%,
+    rgba(64, 147, 255, 0) 50%,
+    rgba(64, 147, 255, 0.3) 100%
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .connectBtn:hover {
-  background: rgba(101, 114, 148, 0.25);
+  background: rgba(17, 21, 26, 0.8);
 }
 
 /* Action Buttons Row */
@@ -206,19 +265,43 @@
   gap: 8px;
   padding: 14px 16px;
   border-radius: 14px;
-  background: transparent;
-  border: 1.5px solid rgba(139, 0, 0, 0.8);
+  background: rgba(17, 21, 26, 0.5);
+  border: none;
   color: #fff;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
-  box-shadow: 0 0 15px rgba(139, 0, 0, 0.4), inset 0 0 15px rgba(139, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.actionBtn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg, 
+    rgba(53, 255, 208, 0.5) 0%, 
+    rgba(53, 255, 208, 0) 50%,
+    rgba(64, 147, 255, 0) 50%,
+    rgba(64, 147, 255, 0.4) 100%
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .actionBtn:hover {
-  border-color: rgba(180, 0, 0, 0.9);
-  box-shadow: 0 0 20px rgba(139, 0, 0, 0.6), inset 0 0 20px rgba(139, 0, 0, 0.15);
+  background: rgba(17, 21, 26, 0.7);
 }
 
 /* Transfer Button */
@@ -226,21 +309,44 @@
   width: 100%;
   padding: 14px;
   border-radius: 14px;
-  background: transparent;
-  border: 1.5px solid rgba(139, 0, 0, 0.8);
+  background: rgba(17, 21, 26, 0.5);
+  border: none;
   color: #fff;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
-  box-shadow: 0 0 15px rgba(139, 0, 0, 0.4), inset 0 0 15px rgba(139, 0, 0, 0.1);
   position: relative;
   z-index: 1;
+  overflow: hidden;
+}
+
+.transferBtn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg, 
+    rgba(53, 255, 208, 0.5) 0%, 
+    rgba(53, 255, 208, 0) 50%,
+    rgba(64, 147, 255, 0) 50%,
+    rgba(64, 147, 255, 0.4) 100%
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .transferBtn:hover {
-  border-color: rgba(180, 0, 0, 0.9);
-  box-shadow: 0 0 20px rgba(139, 0, 0, 0.6), inset 0 0 20px rgba(139, 0, 0, 0.15);
+  background: rgba(17, 21, 26, 0.7);
 }
 
 /* Center Label */
@@ -278,7 +384,9 @@
   height: 90px;
   flex: 1;
   max-width: 110px;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(20, 20, 40, 0.6));
+  background: rgba(17, 21, 26, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 14px;
   display: flex;
   justify-content: center;
@@ -287,8 +395,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   overflow: hidden;
-  border: 1px solid rgba(139, 0, 0, 0.3);
-  box-shadow: 0 0 10px rgba(139, 0, 0, 0.2);
+  border: none;
 }
 
 .inventoryItem::before {
@@ -296,7 +403,22 @@
   position: absolute;
   inset: 0;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  padding: 1px;
+  background: linear-gradient(
+    135deg, 
+    rgba(53, 255, 208, 0.3) 0%, 
+    rgba(53, 255, 208, 0) 40%,
+    rgba(64, 147, 255, 0) 60%,
+    rgba(64, 147, 255, 0.2) 100%
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
   pointer-events: none;
 }
 
@@ -315,13 +437,30 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 80px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
-  padding: 0 10px 20px;
-  background: linear-gradient(to top, rgba(10, 10, 10, 0.98) 0%, rgba(10, 10, 10, 0.9) 60%, transparent 100%);
+  height: 101px;
   z-index: 100;
+}
+
+.navBgShape {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 101px;
+  pointer-events: none;
+}
+
+.navItems {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 10px 10px;
+  z-index: 2;
 }
 
 .navItem {
@@ -374,7 +513,7 @@
   color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
   position: relative;
-  margin-bottom: 15px;
+  margin-top: -40px;
 }
 
 .navItemCenter span {
@@ -383,13 +522,16 @@
 }
 
 .centerButton {
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(60, 20, 40, 0.9), rgba(40, 15, 30, 0.95));
+  background: linear-gradient(180deg, rgba(20, 25, 35, 0.95) 0%, rgba(10, 15, 20, 0.98) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(139, 0, 0, 0.5);
-  box-shadow: 0 0 20px rgba(139, 0, 0, 0.4);
+  border: 1px solid rgba(53, 255, 208, 0.3);
+  box-shadow: 
+    0 0 20px rgba(53, 255, 208, 0.15),
+    0 0 40px rgba(64, 147, 255, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
 }
