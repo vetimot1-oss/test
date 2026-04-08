@@ -64,7 +64,7 @@ All games are **provably fair** with server-side random seed generation.
 ## 💳 Payments
 
 - **CryptoBot**: TON & USDT deposits/withdrawals (Phase 1)
-- **Plisio**: TRC20 support (Phase 2+)
+- **TON CONNECT**: Integration of tonconnect service (Phase 2)
 - Real-time balance sync via webhooks
 
 ## 📊 Tech Stack
@@ -95,3 +95,24 @@ See `.env.example` files in `frontend/` and `backend/` folders.
 ---
 
 **Project Name**: *To be determined*
+
+## Design Reference
+
+UI/UX is based on [BattleGames](https://battlegames.cloud/) - a Telegram Mini App casino.
+
+See https://github.com/vetimot1-oss/test/blob/main/data.txt for full design reference and assets.
+
+the result should be as on following images exactly
+https://github.com/vetimot1-oss/test/blob/main/photo_1_2026-04-07_23-03-26.jpg
+https://github.com/vetimot1-oss/test/blob/main/photo_2_2026-04-07_23-03-26.jpg
+https://github.com/vetimot1-oss/test/blob/main/photo_3_2026-04-07_23-03-26.jpg
+
+## House Edge
+
+| Game | House Edge |
+|------|------------|
+| Mines | 10-13% |
+| Crash | 10-13% |
+| Higher/Lower | 10-13% |
+
+The house edge is built into the payout multipliers. All games use provably fair algorithms where players can verify each result.
