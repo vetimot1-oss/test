@@ -27,20 +27,18 @@ export default function Home() {
       <GlassFilters />
       
       {/* Header */}
-      <header className="px-4 pt-6 pb-4 flex items-center justify-between">
+      <header className="px-4 pt-3 pb-3 flex items-center justify-between gap-4">
         {/* Balance */}
-        <div className="glass-pill px-4 py-2.5 flex items-center gap-2">
-          <Diamond className="w-5 h-5 text-red-500 fill-red-500 icon-glow" />
-          <span className="text-lg font-semibold">{balance.toLocaleString()}</span>
-          <button className="ml-1 w-6 h-6 rounded-full glass-button flex items-center justify-center text-sm font-medium">
-            +
-          </button>
+        <div className="header-pill flex items-center gap-2">
+          <Diamond className="w-4 h-4 text-red-500 fill-red-500" />
+          <span className="text-sm font-semibold">{balance.toLocaleString()}</span>
+          <span className="text-white/60 text-sm">+</span>
         </div>
         
         {/* Wallet Button */}
-        <button className="glass-pill px-5 py-2.5 flex items-center gap-2.5">
-          <Wallet className="w-5 h-5 text-red-400" />
-          <span className="font-medium">Кошелек</span>
+        <button className="header-pill flex items-center gap-2">
+          <Wallet className="w-4 h-4 text-red-400" />
+          <span className="text-sm font-medium">Кошелек</span>
         </button>
       </header>
 
@@ -54,50 +52,56 @@ export default function Home() {
       </main>
 
       {/* Bottom Navigation */}
-      <nav className="fixed bottom-4 left-4 right-4 glass-heavy rounded-[2rem] px-2 py-3 flex items-center justify-around">
-        <NavItem 
-          icon={<Diamond className="w-5 h-5" />} 
-          label="Стейкинг" 
-          active={activeTab === 'staking'}
-          onClick={() => setActiveTab('staking')}
-        />
-        <NavItem 
-          icon={<Gamepad2 className="w-5 h-5" />} 
-          label="Соло" 
-          active={activeTab === 'solo'}
-          onClick={() => setActiveTab('solo')}
-        />
-        
-        {/* Center button - Online */}
-        <button 
-          onClick={() => setActiveTab('online')}
-          className="flex flex-col items-center gap-1 -mt-8"
-        >
-          <div className={`w-16 h-16 rounded-full flex items-center justify-center relative ${
-            activeTab === 'online' 
-              ? 'bg-gradient-to-b from-red-600/30 to-red-900/40 border-2 border-red-500/50' 
-              : 'glass'
-          }`}>
-            <div className="absolute inset-0 rounded-full bg-red-500/10 blur-xl" />
-            <Swords className={`w-7 h-7 relative z-10 ${activeTab === 'online' ? 'text-red-400 icon-glow' : 'text-white/70'}`} />
+      <nav className="fixed bottom-0 left-0 right-0 z-50">
+        {/* Main nav bar */}
+        <div className="nav-bar mx-0 px-2 pt-2 pb-6 flex items-end justify-around">
+          <NavItem 
+            icon={<Diamond className="w-5 h-5" />} 
+            label="Стейкинг" 
+            active={activeTab === 'staking'}
+            onClick={() => setActiveTab('staking')}
+          />
+          <NavItem 
+            icon={<Gamepad2 className="w-5 h-5" />} 
+            label="Соло" 
+            active={activeTab === 'solo'}
+            onClick={() => setActiveTab('solo')}
+          />
+          
+          {/* Center button - Online (raised) */}
+          <div className="flex flex-col items-center -mt-6 relative">
+            <button 
+              onClick={() => setActiveTab('online')}
+              className="relative"
+            >
+              {/* Outer glow ring */}
+              <div className="absolute -inset-2 rounded-full bg-gradient-to-b from-red-900/40 to-red-950/60 blur-sm" />
+              {/* Main button */}
+              <div className={`relative w-14 h-14 rounded-full flex items-center justify-center nav-center-btn ${
+                activeTab === 'online' ? 'active' : ''
+              }`}>
+                <Swords className={`w-6 h-6 ${activeTab === 'online' ? 'text-red-400' : 'text-white/60'}`} />
+              </div>
+            </button>
+            <span className={`text-[10px] mt-1.5 font-medium ${activeTab === 'online' ? 'text-white' : 'text-white/40'}`}>
+              Онлайн
+            </span>
           </div>
-          <span className={`text-[11px] font-medium ${activeTab === 'online' ? 'text-red-400' : 'text-white/50'}`}>
-            Онлайн
-          </span>
-        </button>
-        
-        <NavItem 
-          icon={<Trophy className="w-5 h-5" />} 
-          label="Турнир" 
-          active={activeTab === 'tournament'}
-          onClick={() => setActiveTab('tournament')}
-        />
-        <NavItem 
-          icon={<User className="w-5 h-5" />} 
-          label="Профиль" 
-          active={activeTab === 'profile'}
-          onClick={() => setActiveTab('profile')}
-        />
+          
+          <NavItem 
+            icon={<Trophy className="w-5 h-5" />} 
+            label="Турнир" 
+            active={activeTab === 'tournament'}
+            onClick={() => setActiveTab('tournament')}
+          />
+          <NavItem 
+            icon={<User className="w-5 h-5" />} 
+            label="Профиль" 
+            active={activeTab === 'profile'}
+            onClick={() => setActiveTab('profile')}
+            showStar={activeTab === 'profile'}
+          />
+        </div>
       </nav>
     </div>
   );
@@ -107,28 +111,33 @@ function NavItem({
   icon, 
   label, 
   active, 
-  onClick 
+  onClick,
+  showStar
 }: { 
   icon: React.ReactNode; 
   label: string; 
   active: boolean;
   onClick: () => void;
+  showStar?: boolean;
 }) {
   return (
     <button 
       onClick={onClick}
-      className="flex flex-col items-center gap-1.5"
+      className="flex flex-col items-center gap-1 w-16 relative"
     >
-      <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-        active ? 'glass-button' : 'bg-white/5'
-      }`}>
-        <span className={active ? 'text-red-400 icon-glow' : 'text-white/50'}>
-          {icon}
-        </span>
+      <div className={`relative ${active ? 'text-red-400' : 'text-white/40'}`}>
+        {icon}
       </div>
-      <span className={`text-[10px] ${active ? 'text-red-400' : 'text-white/50'}`}>
+      <span className={`text-[10px] font-medium ${active ? 'text-white' : 'text-white/40'}`}>
         {label}
       </span>
+      {showStar && (
+        <div className="absolute -top-1 -right-1 w-3 h-3 text-yellow-400">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+      )}
     </button>
   );
 }

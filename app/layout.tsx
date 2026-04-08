@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className="dark">
-      <body className="antialiased overflow-x-hidden">
+      <body className="antialiased overflow-hidden">
         {children}
       </body>
     </html>
