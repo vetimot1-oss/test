@@ -1,0 +1,43 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  :root {
+    --card-bg: rgba(20, 30, 50, 0.4);
+    --card-blur: 14px;
+    --card-radius: 18px;
+    --card-border-width: 1px;
+    --card-border-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+    --text-primary: #e9eefc;
+    --muted: #525a70;
+  }
+
+  html, body {
+    background: #0c0e18;
+    color: var(--text-primary);
+    font-family: 'Gilroy', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  * {
+    scrollbar-width: none;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+  .card {
+    @apply backdrop-blur-[14px] bg-[rgba(20,30,50,0.4)] border border-[rgba(255,255,255,0.1)] rounded-[18px];
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-br from-[#486dff] to-[#4897ff] rounded-[14px] text-white font-semibold transition-all hover:shadow-lg active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-[rgba(101,114,148,0.1)] border border-[rgba(255,255,255,0.1)] rounded-[14px] text-white font-semibold transition-all hover:bg-[rgba(101,114,148,0.15)];
+  }
+}
