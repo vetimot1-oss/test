@@ -134,28 +134,19 @@ export default function ProfilePage() {
         {/* SVG Background Shape */}
         <svg className={styles.navBgShape} width="318" height="101" viewBox="0 0 318 101" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
           <foreignObject x="-30" y="-30" width="378" height="161">
-            <div style={{backdropFilter: 'blur(15px)', WebkitBackdropFilter: 'blur(15px)', clipPath: 'url(#bgblur_nav_clip)', height: '100%', width: '100%'}} />
+            <div style={{backdropFilter: 'blur(25px)', WebkitBackdropFilter: 'blur(25px)', clipPath: 'url(#bgblur_nav_clip)', height: '100%', width: '100%'}} />
           </foreignObject>
           <g>
-            <path d="M159.5 0C172.697 0 184.381 6.47218 191.553 16.4154C197.049 24.0348 204.774 31 214.169 31H298C309.046 31 318 39.9543 318 51V81C318 92.0457 309.046 101 298 101H20C8.95431 101 4.83225e-07 92.0457 0 81V51C0 39.9543 8.95431 31 20 31H104.831C114.226 31 121.951 24.0348 127.447 16.4154C134.619 6.47218 146.303 0 159.5 0Z" fill="url(#paint0_nav)" fillOpacity="0.3"/>
-            <path d="M159.5 0.25C172.613 0.25 184.223 6.68067 191.351 16.5615C196.858 24.196 204.648 31.2499 214.169 31.25H298C308.908 31.25 317.75 40.0924 317.75 51V81C317.75 91.9076 308.908 100.75 298 100.75H20C9.09238 100.75 0.25 91.9076 0.25 81V51C0.25 40.0924 9.09238 31.25 20 31.25H104.831C114.352 31.2499 122.142 24.196 127.649 16.5615C134.777 6.68066 146.387 0.25 159.5 0.25Z" stroke="url(#paint1_nav)" strokeOpacity="0.7" strokeWidth="0.5"/>
-            <path d="M159.5 0.25C172.613 0.25 184.223 6.68067 191.351 16.5615C196.858 24.196 204.648 31.2499 214.169 31.25H298C308.908 31.25 317.75 40.0924 317.75 51V81C317.75 91.9076 308.908 100.75 298 100.75H20C9.09238 100.75 0.25 91.9076 0.25 81V51C0.25 40.0924 9.09238 31.25 20 31.25H104.831C114.352 31.2499 122.142 24.196 127.649 16.5615C134.777 6.68066 146.387 0.25 159.5 0.25Z" stroke="url(#paint2_nav)" strokeOpacity="0.7" strokeWidth="0.5"/>
+            <path d="M159.5 0C172.697 0 184.381 6.47218 191.553 16.4154C197.049 24.0348 204.774 31 214.169 31H298C309.046 31 318 39.9543 318 51V81C318 92.0457 309.046 101 298 101H20C8.95431 101 4.83225e-07 92.0457 0 81V51C0 39.9543 8.95431 31 20 31H104.831C114.226 31 121.951 24.0348 127.447 16.4154C134.619 6.47218 146.303 0 159.5 0Z" fill="url(#paint0_nav)" fillOpacity="0.5"/>
+            <path d="M159.5 0.25C172.613 0.25 184.223 6.68067 191.351 16.5615C196.858 24.196 204.648 31.2499 214.169 31.25H298C308.908 31.25 317.75 40.0924 317.75 51V81C317.75 91.9076 308.908 100.75 298 100.75H20C9.09238 100.75 0.25 91.9076 0.25 81V51C0.25 40.0924 9.09238 31.25 20 31.25H104.831C114.352 31.2499 122.142 24.196 127.649 16.5615C134.777 6.68066 146.387 0.25 159.5 0.25Z" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5"/>
           </g>
           <defs>
             <clipPath id="bgblur_nav_clip" transform="translate(30 30)">
               <path d="M159.5 0C172.697 0 184.381 6.47218 191.553 16.4154C197.049 24.0348 204.774 31 214.169 31H298C309.046 31 318 39.9543 318 51V81C318 92.0457 309.046 101 298 101H20C8.95431 101 4.83225e-07 92.0457 0 81V51C0 39.9543 8.95431 31 20 31H104.831C114.226 31 121.951 24.0348 127.447 16.4154C134.619 6.47218 146.303 0 159.5 0Z"/>
             </clipPath>
-            <radialGradient id="paint0_nav" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(70 -26) rotate(60) scale(148 148)">
-              <stop stopColor="#11151A"/>
-              <stop offset="1" stopColor="#040506"/>
-            </radialGradient>
-            <radialGradient id="paint1_nav" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(18.5 11) rotate(22.6679) scale(192.359 61.0951)">
-              <stop stopColor="#35FFD0"/>
-              <stop offset="1" stopColor="#35FFD0" stopOpacity="0"/>
-            </radialGradient>
-            <radialGradient id="paint2_nav" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(290.5 0) rotate(151.918) scale(168.882 85.9671)">
-              <stop stopColor="#4093FF"/>
-              <stop offset="1" stopColor="#497FFF" stopOpacity="0"/>
+            <radialGradient id="paint0_nav" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(159 50) scale(180 80)">
+              <stop stopColor="#0A0000"/>
+              <stop offset="1" stopColor="#050000"/>
             </radialGradient>
           </defs>
         </svg>

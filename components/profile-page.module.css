@@ -24,9 +24,9 @@
   height: 350px;
   background: radial-gradient(
     circle, 
-    rgba(53, 255, 208, 0.15) 0%, 
-    rgba(64, 147, 255, 0.1) 30%,
-    transparent 60%
+    rgba(255, 0, 0, 0.25) 0%, 
+    rgba(42, 0, 0, 0.15) 40%,
+    transparent 70%
   );
   filter: blur(80px);
   border-radius: 50%;
@@ -123,40 +123,14 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background: rgba(17, 21, 26, 0.4);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(10, 0, 0, 0.5);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   padding: 20px;
   gap: 16px;
   border-radius: 18px;
   overflow: hidden;
-  border: 1px solid transparent;
-  background-clip: padding-box;
-}
-
-/* Gradient border effect */
-.glassCard::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 18px;
-  padding: 1px;
-  background: linear-gradient(
-    135deg, 
-    rgba(53, 255, 208, 0.4) 0%, 
-    rgba(53, 255, 208, 0) 30%,
-    rgba(64, 147, 255, 0) 70%,
-    rgba(64, 147, 255, 0.3) 100%
-  );
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Diagonal light reflection for liquid glass effect */
@@ -180,18 +154,6 @@
   z-index: 0;
 }
 
-/* Top highlight */
-.glassCard::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 20px;
-  right: 20px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  pointer-events: none;
-}
-
 /* Wallet Row */
 .walletRow {
   display: flex;
@@ -209,43 +171,17 @@
 .connectBtn {
   padding: 10px 20px;
   border-radius: 12px;
-  background: rgba(17, 21, 26, 0.6);
-  border: none;
+  background: rgba(10, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: #fff;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: background 0.2s;
-  position: relative;
-  overflow: hidden;
-}
-
-.connectBtn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  padding: 1px;
-  background: linear-gradient(
-    135deg, 
-    rgba(53, 255, 208, 0.4) 0%, 
-    rgba(53, 255, 208, 0) 50%,
-    rgba(64, 147, 255, 0) 50%,
-    rgba(64, 147, 255, 0.3) 100%
-  );
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
 }
 
 .connectBtn:hover {
-  background: rgba(17, 21, 26, 0.8);
+  background: rgba(20, 0, 0, 0.8);
 }
 
 /* Action Buttons Row */
@@ -265,43 +201,17 @@
   gap: 8px;
   padding: 14px 16px;
   border-radius: 14px;
-  background: rgba(17, 21, 26, 0.5);
-  border: none;
+  background: rgba(10, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: #fff;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
-  position: relative;
-  overflow: hidden;
-}
-
-.actionBtn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 14px;
-  padding: 1px;
-  background: linear-gradient(
-    135deg, 
-    rgba(53, 255, 208, 0.5) 0%, 
-    rgba(53, 255, 208, 0) 50%,
-    rgba(64, 147, 255, 0) 50%,
-    rgba(64, 147, 255, 0.4) 100%
-  );
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
 }
 
 .actionBtn:hover {
-  background: rgba(17, 21, 26, 0.7);
+  background: rgba(20, 0, 0, 0.7);
 }
 
 /* Transfer Button */
@@ -309,8 +219,8 @@
   width: 100%;
   padding: 14px;
   border-radius: 14px;
-  background: rgba(17, 21, 26, 0.5);
-  border: none;
+  background: rgba(10, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: #fff;
   font-size: 14px;
   font-weight: 500;
@@ -318,35 +228,10 @@
   transition: all 0.2s;
   position: relative;
   z-index: 1;
-  overflow: hidden;
-}
-
-.transferBtn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 14px;
-  padding: 1px;
-  background: linear-gradient(
-    135deg, 
-    rgba(53, 255, 208, 0.5) 0%, 
-    rgba(53, 255, 208, 0) 50%,
-    rgba(64, 147, 255, 0) 50%,
-    rgba(64, 147, 255, 0.4) 100%
-  );
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
 }
 
 .transferBtn:hover {
-  background: rgba(17, 21, 26, 0.7);
+  background: rgba(20, 0, 0, 0.7);
 }
 
 /* Center Label */
@@ -363,7 +248,7 @@
 .line {
   flex: 1;
   height: 1px;
-  background-color: rgba(45, 52, 73, 0.6);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .smallLabel {
@@ -384,9 +269,9 @@
   height: 90px;
   flex: 1;
   max-width: 110px;
-  background: rgba(17, 21, 26, 0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(10, 0, 0, 0.5);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border-radius: 14px;
   display: flex;
   justify-content: center;
@@ -395,31 +280,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   overflow: hidden;
-  border: none;
-}
-
-.inventoryItem::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 14px;
-  padding: 1px;
-  background: linear-gradient(
-    135deg, 
-    rgba(53, 255, 208, 0.3) 0%, 
-    rgba(53, 255, 208, 0) 40%,
-    rgba(64, 147, 255, 0) 60%,
-    rgba(64, 147, 255, 0.2) 100%
-  );
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .inventoryItemArrow {
@@ -487,11 +348,11 @@
 }
 
 .navItemActive {
-  color: #ff6b6b;
+  color: #ff4444;
 }
 
 .navItemActive span {
-  color: #ff6b6b;
+  color: #ff4444;
 }
 
 .activeIndicator {
@@ -525,13 +386,13 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: linear-gradient(180deg, rgba(20, 25, 35, 0.95) 0%, rgba(10, 15, 20, 0.98) 100%);
+  background: rgba(10, 0, 0, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(53, 255, 208, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 
-    0 0 20px rgba(53, 255, 208, 0.15),
-    0 0 40px rgba(64, 147, 255, 0.1),
+    0 0 40px rgba(255, 0, 0, 0.6),
+    0 0 80px rgba(255, 0, 0, 0.3),
     inset 0 1px 1px rgba(255, 255, 255, 0.1);
 }
