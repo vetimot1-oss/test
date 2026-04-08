@@ -1,17 +1,17 @@
 .pageWrap {
   position: relative;
   min-height: 100svh;
-  padding: 0 16px 120px;
+  padding: 60px 16px 120px;
   isolation: isolate;
-  background: #0a0a0a;
+  overflow-x: hidden;
 }
 
+/* Background Red Glow Effects */
 .blurEffects {
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  contain: strict;
   overflow: hidden;
 }
 
@@ -22,42 +22,374 @@
   transform: translateX(-50%);
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(255, 59, 48, 0.4) 0%, rgba(255, 59, 48, 0.2) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(139, 0, 0, 0.6) 0%, rgba(139, 0, 0, 0.3) 40%, transparent 70%);
   filter: blur(60px);
-  z-index: -1;
   border-radius: 50%;
 }
 
-.blurMiddle {
-  position: absolute;
-  top: 350px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 40px);
-  height: 100px;
-  background: rgba(255, 59, 48, 0.3);
-  filter: blur(80px);
-  z-index: -1;
-}
-
+/* Avatar Header */
 .avatarHeader {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 60px;
   position: relative;
   z-index: 1;
 }
 
+.avatarRing {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarImg {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarName {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.avatarSubtitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Balance Section */
 .balanceSection {
-  margin-top: 30px;
+  margin-top: 24px;
+  text-align: center;
   position: relative;
   z-index: 1;
 }
 
+.balanceLabel {
+  font-size: 16px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.balanceWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.tonIcon {
+  margin-right: 8px;
+  height: 30px;
+  color: #fff;
+}
+
+.balanceInteger {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.balanceFraction {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: -4px;
+}
+
+/* Main Glass Card */
 .mainCardArea {
-  margin-top: 30px;
+  margin-top: 32px;
   position: relative;
   z-index: 1;
+}
+
+.glassCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(101, 114, 148, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 20px;
+  gap: 16px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* Diagonal light reflection for liquid glass effect */
+.glassReflection {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    -45deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.03) 40%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.03) 60%,
+    transparent 60%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glassCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  pointer-events: none;
+}
+
+/* Wallet Row */
+.walletRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.walletTitle {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.connectBtn {
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: rgba(101, 114, 148, 0.15);
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.connectBtn:hover {
+  background: rgba(101, 114, 148, 0.25);
+}
+
+/* Action Buttons Row */
+.actionsRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.actionBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: transparent;
+  border: 1.5px solid rgba(139, 0, 0, 0.8);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 0 15px rgba(139, 0, 0, 0.4), inset 0 0 15px rgba(139, 0, 0, 0.1);
+}
+
+.actionBtn:hover {
+  border-color: rgba(180, 0, 0, 0.9);
+  box-shadow: 0 0 20px rgba(139, 0, 0, 0.6), inset 0 0 20px rgba(139, 0, 0, 0.15);
+}
+
+/* Transfer Button */
+.transferBtn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  background: transparent;
+  border: 1.5px solid rgba(139, 0, 0, 0.8);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 0 15px rgba(139, 0, 0, 0.4), inset 0 0 15px rgba(139, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.transferBtn:hover {
+  border-color: rgba(180, 0, 0, 0.9);
+  box-shadow: 0 0 20px rgba(139, 0, 0, 0.6), inset 0 0 20px rgba(139, 0, 0, 0.15);
+}
+
+/* Center Label */
+.centerLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: rgba(45, 52, 73, 0.6);
+}
+
+.smallLabel {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Inventory Grid */
+.inventoryGrid {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.inventoryItem {
+  height: 90px;
+  flex: 1;
+  max-width: 110px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(20, 20, 40, 0.6));
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: 1px solid rgba(139, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(139, 0, 0, 0.2);
+}
+
+.inventoryItem::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.inventoryItemArrow {
+  height: 90px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Bottom Navigation */
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 0 10px 20px;
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.98) 0%, rgba(10, 10, 10, 0.9) 60%, transparent 100%);
+  z-index: 100;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 12px;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: color 0.2s;
+  position: relative;
+  font-size: 10px;
+}
+
+.navItem span {
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.navItem:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.navItemActive {
+  color: #ff6b6b;
+}
+
+.navItemActive span {
+  color: #ff6b6b;
+}
+
+.activeIndicator {
+  position: absolute;
+  top: -2px;
+  right: 4px;
+  width: 6px;
+  height: 6px;
+  background: #ffcc00;
+  border-radius: 50%;
+}
+
+.navItemCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.navItemCenter span {
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.centerButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(60, 20, 40, 0.9), rgba(40, 15, 30, 0.95));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(139, 0, 0, 0.5);
+  box-shadow: 0 0 20px rgba(139, 0, 0, 0.4);
 }
