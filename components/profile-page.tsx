@@ -132,20 +132,20 @@ export default function ProfilePage() {
       {/* Bottom Navigation with SVG Shape */}
       <nav className={styles.bottomNav}>
         {/* SVG Background Shape */}
-        <svg className={styles.navBgShape} width="318" height="101" viewBox="0 0 318 101" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <foreignObject x="-30" y="-30" width="378" height="161">
+        <svg className={styles.navBgShape} width="320" height="85" viewBox="0 0 320 85" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <foreignObject x="-30" y="-30" width="380" height="145">
             <div style={{backdropFilter: 'blur(25px)', WebkitBackdropFilter: 'blur(25px)', clipPath: 'url(#bgblur_nav_clip)', height: '100%', width: '100%'}} />
           </foreignObject>
           <g>
-            <path d="M159.5 0C172.697 0 184.381 6.47218 191.553 16.4154C197.049 24.0348 204.774 31 214.169 31H298C309.046 31 318 39.9543 318 51V81C318 92.0457 309.046 101 298 101H20C8.95431 101 4.83225e-07 92.0457 0 81V51C0 39.9543 8.95431 31 20 31H104.831C114.226 31 121.951 24.0348 127.447 16.4154C134.619 6.47218 146.303 0 159.5 0Z" fill="url(#paint0_nav)" fillOpacity="0.5"/>
-            <path d="M159.5 0.25C172.613 0.25 184.223 6.68067 191.351 16.5615C196.858 24.196 204.648 31.2499 214.169 31.25H298C308.908 31.25 317.75 40.0924 317.75 51V81C317.75 91.9076 308.908 100.75 298 100.75H20C9.09238 100.75 0.25 91.9076 0.25 81V51C0.25 40.0924 9.09238 31.25 20 31.25H104.831C114.352 31.2499 122.142 24.196 127.649 16.5615C134.777 6.68066 146.387 0.25 159.5 0.25Z" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5"/>
+            <path d="M160 0C171.5 0 181.8 5.5 188 14C193 20.5 199.5 26 208 26H300C310 26 320 34 320 44V67C320 77 310 85 300 85H20C10 85 0 77 0 67V44C0 34 10 26 20 26H112C120.5 26 127 20.5 132 14C138.2 5.5 148.5 0 160 0Z" fill="url(#paint0_nav)" fillOpacity="0.45"/>
+            <path d="M160 0.5C171.3 0.5 181.4 5.9 187.5 14.3C192.6 20.9 199.2 26.5 208 26.5H300C309.7 26.5 319.5 34.3 319.5 44V67C319.5 76.7 309.7 84.5 300 84.5H20C10.3 84.5 0.5 76.7 0.5 67V44C0.5 34.3 10.3 26.5 20 26.5H112C120.8 26.5 127.4 20.9 132.5 14.3C138.6 5.9 148.7 0.5 160 0.5Z" stroke="rgba(255,255,255,0.08)" strokeWidth="0.5"/>
           </g>
           <defs>
             <clipPath id="bgblur_nav_clip" transform="translate(30 30)">
-              <path d="M159.5 0C172.697 0 184.381 6.47218 191.553 16.4154C197.049 24.0348 204.774 31 214.169 31H298C309.046 31 318 39.9543 318 51V81C318 92.0457 309.046 101 298 101H20C8.95431 101 4.83225e-07 92.0457 0 81V51C0 39.9543 8.95431 31 20 31H104.831C114.226 31 121.951 24.0348 127.447 16.4154C134.619 6.47218 146.303 0 159.5 0Z"/>
+              <path d="M160 0C171.5 0 181.8 5.5 188 14C193 20.5 199.5 26 208 26H300C310 26 320 34 320 44V67C320 77 310 85 300 85H20C10 85 0 77 0 67V44C0 34 10 26 20 26H112C120.5 26 127 20.5 132 14C138.2 5.5 148.5 0 160 0Z"/>
             </clipPath>
-            <radialGradient id="paint0_nav" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(159 50) scale(180 80)">
-              <stop stopColor="#0A0000"/>
+            <radialGradient id="paint0_nav" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(160 42) scale(180 60)">
+              <stop stopColor="#150000"/>
               <stop offset="1" stopColor="#050000"/>
             </radialGradient>
           </defs>
@@ -154,13 +154,13 @@ export default function ProfilePage() {
         {/* Navigation Items */}
         <div className={styles.navItems}>
           <div className={styles.navItem}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <polygon points="12,2 2,7 2,17 12,22 22,17 22,7"/>
             </svg>
             <span>Стайкинг</span>
           </div>
           <div className={styles.navItem}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <rect x="6" y="11" width="4" height="9" rx="1"/>
               <rect x="14" y="11" width="4" height="9" rx="1"/>
               <circle cx="8" cy="6" r="3"/>
@@ -172,7 +172,7 @@ export default function ProfilePage() {
           {/* Center Button */}
           <div className={styles.navItemCenter}>
             <div className={styles.centerButton}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M14.5 17.5L3 6V3h3l11.5 11.5"/>
                 <path d="M13 19l6-6"/>
                 <path d="M16 16l4 4"/>
@@ -183,7 +183,7 @@ export default function ProfilePage() {
           </div>
 
           <div className={styles.navItem}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M6 9H4.5a2.5 2.5 0 010-5C7 4 7 7 7 7"/>
               <path d="M18 9h1.5a2.5 2.5 0 000-5C17 4 17 7 17 7"/>
               <path d="M4 22h16"/>
@@ -194,7 +194,7 @@ export default function ProfilePage() {
             <span>Турнир</span>
           </div>
           <div className={`${styles.navItem} ${styles.navItemActive}`}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <svg viewBox="0 0 24 24" fill="currentColor">
               <circle cx="12" cy="8" r="4"/>
               <path d="M20 21a8 8 0 10-16 0"/>
             </svg>
