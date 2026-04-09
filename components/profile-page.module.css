@@ -407,13 +407,13 @@
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background: linear-gradient(180deg, rgba(42, 0, 0, 0.9) 0%, rgba(15, 0, 0, 0.95) 100%);
+  background: rgba(10, 0, 0, 0.5);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 
     0 0 40px rgba(255, 0, 0, 0.6),
     0 0 80px rgba(139, 0, 0, 0.4),

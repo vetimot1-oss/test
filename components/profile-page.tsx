@@ -137,17 +137,13 @@ export default function ProfilePage() {
             <div style={{backdropFilter: 'blur(25px)', WebkitBackdropFilter: 'blur(25px)', clipPath: 'url(#bgblur_nav_clip)', height: '100%', width: '100%'}} />
           </foreignObject>
           <g>
-            <path d="M160 0C171.5 0 181.8 5.5 188 14C193 20.5 199.5 26 208 26H300C310 26 320 34 320 44V67C320 77 310 85 300 85H20C10 85 0 77 0 67V44C0 34 10 26 20 26H112C120.5 26 127 20.5 132 14C138.2 5.5 148.5 0 160 0Z" fill="url(#paint0_nav)" fillOpacity="0.45"/>
-            <path d="M160 0.5C171.3 0.5 181.4 5.9 187.5 14.3C192.6 20.9 199.2 26.5 208 26.5H300C309.7 26.5 319.5 34.3 319.5 44V67C319.5 76.7 309.7 84.5 300 84.5H20C10.3 84.5 0.5 76.7 0.5 67V44C0.5 34.3 10.3 26.5 20 26.5H112C120.8 26.5 127.4 20.9 132.5 14.3C138.6 5.9 148.7 0.5 160 0.5Z" stroke="rgba(255,255,255,0.08)" strokeWidth="0.5"/>
+            <path d="M160 0C171.5 0 181.8 5.5 188 14C193 20.5 199.5 26 208 26H300C310 26 320 34 320 44V67C320 77 310 85 300 85H20C10 85 0 77 0 67V44C0 34 10 26 20 26H112C120.5 26 127 20.5 132 14C138.2 5.5 148.5 0 160 0Z" fill="rgba(10, 0, 0, 0.5)"/>
+            <path d="M160 0.5C171.3 0.5 181.4 5.9 187.5 14.3C192.6 20.9 199.2 26.5 208 26.5H300C309.7 26.5 319.5 34.3 319.5 44V67C319.5 76.7 309.7 84.5 300 84.5H20C10.3 84.5 0.5 76.7 0.5 67V44C0.5 34.3 10.3 26.5 20 26.5H112C120.8 26.5 127.4 20.9 132.5 14.3C138.6 5.9 148.7 0.5 160 0.5Z" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5"/>
           </g>
           <defs>
             <clipPath id="bgblur_nav_clip" transform="translate(30 30)">
               <path d="M160 0C171.5 0 181.8 5.5 188 14C193 20.5 199.5 26 208 26H300C310 26 320 34 320 44V67C320 77 310 85 300 85H20C10 85 0 77 0 67V44C0 34 10 26 20 26H112C120.5 26 127 20.5 132 14C138.2 5.5 148.5 0 160 0Z"/>
             </clipPath>
-            <radialGradient id="paint0_nav" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(160 42) scale(180 60)">
-              <stop stopColor="#150000"/>
-              <stop offset="1" stopColor="#050000"/>
-            </radialGradient>
           </defs>
         </svg>
 
